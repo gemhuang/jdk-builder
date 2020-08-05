@@ -1,7 +1,5 @@
 #!/bin/bash
 
-cd /app
-
 bash configure \
     --with-x=/usr/ \
     --with-freetype-include=/usr/include/freetype2/ \
@@ -14,6 +12,7 @@ bash configure \
     --with-jvm-interpreter=template \
     --with-jdk-variant=normal \
     --with-target-bits=64 \
+    --with-boot-jdk=/root/.sdkman/candidates/java/current \
     --enable-ccache \
     --enable-debug \
     --enable-unlimited-crypto \

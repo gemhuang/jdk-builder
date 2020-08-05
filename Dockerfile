@@ -10,7 +10,7 @@ RUN sed -i 's/deb\.debian\.org\/debian/opensource.nchc.org.tw\/debian/g' /etc/ap
     apt-get update && \
     apt-get upgrade -y
 
-RUN apt-get install -y curl wget zip unzip && \
+RUN apt-get install -y curl wget zip unzip mercurial && \
     apt-get install -y build-essential && \
     apt-get install -y libfreetype6 libfreetype6-dev && \
     apt-get install -y libcups2 libcups2-dev && \
@@ -28,5 +28,5 @@ RUN source "$HOME/.sdkman/bin/sdkman-init.sh"
 RUN chmod a+x "$HOME/.sdkman/bin/sdkman-init.sh"
 RUN yes | /bin/bash -l -c "sdk install java ${BOOT_VER}"
 
-COPY ./build_jdk.sh /
+COPY build-jdk.sh /.
 
